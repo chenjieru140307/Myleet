@@ -14,3 +14,24 @@ public:
         return -1;
     }
 };
+
+# 贪心
+class Solution {
+public:
+    int findContentChildren(vector<int>& g, vector<int>& s) {
+        int ng=0;int nc=0;
+        std::sort(g.begin(),g.end());
+        std::sort(s.begin(),s.end());
+        while(ng<g.size()&& nc<s.size())
+        {
+            if(s[nc]>=g[ng])
+            {
+                ng++;
+            }
+            nc++;
+        }
+        return ng;
+
+
+    }
+};
